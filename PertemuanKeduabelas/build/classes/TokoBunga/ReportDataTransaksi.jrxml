@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60829ed2-97f7-4aad-8a19-ceeba8c7abd5">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM transaksitokobunga]]>
+	</queryString>
+	<field name="idtransaksi" class="java.lang.String"/>
+	<field name="idbunga" class="java.lang.String"/>
+	<field name="namapelanggan" class="java.lang.String"/>
+	<field name="tanggal" class="java.sql.Date"/>
+	<field name="jumlah" class="java.lang.Integer"/>
+	<field name="totalharga" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="abb26d00-8861-422a-a0af-7366379bd39a"/>
+				<imageExpression><![CDATA[new java.io.File("src/TokoBunga/leaf_banner_violet.png").getAbsolutePath()]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="a1f40045-14a0-4490-a8c3-76fe052398d1"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data Pesanan Buket]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="46" width="200" height="22" uuid="043b603b-f09c-4ebb-8ba8-92269cd77d68"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Toko Bunga]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="6f4345da-4a7d-4461-9b18-231be04552f4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="76" height="15" uuid="09c506c3-ebdb-4df8-ab44-babd933b2971"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="76" y="19" width="56" height="15" uuid="4e886261-4a6f-45d8-8202-0e3aef5dff55"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID Bunga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="132" y="19" width="105" height="15" uuid="edd46c8e-0b6e-48df-89fa-ee743451cf91"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Pelanggan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="237" y="19" width="120" height="15" uuid="6fe40f42-b798-484e-b67b-0c2add5842f8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tanggal Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="358" y="19" width="123" height="15" uuid="5bf97fda-921e-40a2-a42e-745c2662471a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jumlah Pesananan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="482" y="19" width="72" height="15" uuid="660dc734-d8ad-48cf-ad9d-a525f8200de2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Harga]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="7713803f-acc6-46e6-80ac-cc6e20f90408"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="1" width="76" height="15" uuid="4caafa30-d7a6-4c5f-a15d-ba007bb6c7cd"/>
+				<textFieldExpression><![CDATA[$F{idtransaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="76" y="1" width="56" height="15" uuid="eb048856-3716-418a-a44d-f62eb8f48c8e"/>
+				<textFieldExpression><![CDATA[$F{idbunga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="132" y="1" width="105" height="15" uuid="5ebc72d7-3f0c-4e6b-a2a3-4c166e16efd8"/>
+				<textFieldExpression><![CDATA[$F{namapelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="237" y="1" width="120" height="15" uuid="be712f88-9faa-4a30-bbb9-8658e8eab070"/>
+				<textFieldExpression><![CDATA[$F{tanggal} == null ? "" : new java.text.SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date($F{tanggal}.getTime()))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="358" y="1" width="123" height="15" uuid="36220ac5-bbdc-4d2b-a280-727f91829846"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="482" y="1" width="72" height="15" uuid="6884bc98-b426-4967-b03c-3d60ec28d120"/>
+				<textFieldExpression><![CDATA[$F{totalharga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7e508484-0820-4a95-b73f-32e7898b6471"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="5d07a65c-2c09-46ba-937a-9fbb9876c82e"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="c786e11b-41bb-49d8-b15d-0070a4638370"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="6d26e423-2190-4959-95cd-a9119de7c9d8"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
